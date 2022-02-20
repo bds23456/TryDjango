@@ -5,10 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Главная страница</title>
+    <title>bds2 blog</title>
 </head>
 <body>
-    <p>Hi there!</p>
-    <p>It works!</p>
+    <div>
+    <h1><a href="/">BDS2 Blog</a></h1>
+    </div>
+
+    {% for post in posts %}
+    <div>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p><em>published: {{ post.published_date }}</em></p><br>
+    </div>
+    {% endfor %}
 </body>
 </html>
